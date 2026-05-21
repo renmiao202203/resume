@@ -442,6 +442,21 @@
     line-height: 1;
   }
 
+  .profile-list {
+    list-style: none;
+    font-size: 14px;
+    color: rgba(232,234,246,0.65);
+    line-height: 1.9;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.5s, transform 0.5s;
+  }
+  .profile-list li { padding-left: 20px; position: relative; }
+  .profile-list li::before { content: '▹'; position: absolute; left: 0; color: var(--cyan); }
+
   .timeline { position: relative; padding-left: 32px; }
   .timeline::before {
     content: '';
@@ -580,6 +595,7 @@
 <nav>
   <div class="nav-logo">RM.</div>
   <ul class="nav-links">
+    <li><a href="#profile">简介</a></li>
     <li><a href="#skills">技能</a></li>
     <li><a href="#projects">项目</a></li>
     <li><a href="#experience">经历</a></li>
@@ -598,7 +614,7 @@
         </h1>
         <p class="hero-subtitle">3年+ 前端开发经验</p>
         <p class="hero-desc">
-          专注 B 端系统开发与 AI 应用落地，熟悉 Vue / React 技术栈，具备大模型接入、流式输出、数据可视化、地图开发等全栈前端能力。在多个政企级项目中担任前端负责人。
+          专注 B 端系统开发与 AI 应用落地，熟悉 Vue / React 技术栈，具备大模型接入、流式输出、数据可视化、地图开发等全栈前端能力。拥有中级软件设计师证书，在多个政企级项目中担任前端负责人。
         </p>
         <div class="hero-btns">
           <a href="#projects" class="btn-primary">查看项目 →</a>
@@ -615,17 +631,33 @@
                 <span class="stat-label">YEARS</span>
               </div>
               <div class="stat-item">
-                <span class="stat-num">5+</span>
+                <span class="stat-num">6+</span>
                 <span class="stat-label">PROJECTS</span>
               </div>
             </div>
           </div>
           <div class="badge-float">Vue · React</div>
           <div class="badge-float">AI · LLM</div>
-          <div class="badge-float">ECharts</div>
+          <div class="badge-float">ECharts · Cesium</div>
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<section id="profile">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-num">00</span>
+      <h2 class="section-title">个人简介</h2>
+      <div class="section-line"></div>
+    </div>
+    <ul class="profile-list" id="profile-list">
+      <li>3 年+ 前端开发经验，拥有中级软件设计师证书，主要从事 B 端业务系统开发与 AI 应用前端实现。</li>
+      <li>擅长业务需求梳理、系统模块拆分及技术方案落地，能够在产品与技术之间承担桥梁角色。</li>
+      <li>参与多个政务与企业级系统项目，包括应急指挥平台、教育局数据采集系统、财务智能审核系统等。</li>
+      <li>具备 AI 应用开发经验（大模型 API、流式输出、多轮对话），并在团队中推动 AI 辅助开发实践。</li>
+    </ul>
   </div>
 </section>
 
@@ -640,7 +672,7 @@
       <div class="skill-card">
         <div class="skill-icon">⚡</div>
         <div class="skill-name">前端基础</div>
-        <div class="skill-desc">扎实掌握 HTML、CSS、JavaScript（ES6+），熟悉响应式布局，具备复杂页面交互实现能力。</div>
+        <div class="skill-desc">扎实掌握 HTML、CSS、JavaScript（ES6+），熟悉响应式布局（Flex / Grid），具备复杂页面结构与交互实现能力，良好的代码规范与组件化开发意识。</div>
         <div class="skill-tags">
           <span class="tag">HTML5</span><span class="tag">CSS3</span><span class="tag">ES6+</span><span class="tag">Flex/Grid</span>
         </div>
@@ -648,7 +680,7 @@
       <div class="skill-card">
         <div class="skill-icon">🛠</div>
         <div class="skill-name">框架与工程化</div>
-        <div class="skill-desc">熟练使用 Vue 3 Composition API、React 进行中后台开发，掌握 Vite/Webpack 构建工具。</div>
+        <div class="skill-desc">熟练使用 Vue 3（Composition API）、React 进行中后台系统开发，掌握 Pinia、Vue Router 等生态；熟悉 Vite / Webpack 构建工具，具备项目搭建、模块拆分与构建优化能力。</div>
         <div class="skill-tags">
           <span class="tag">Vue3</span><span class="tag">React</span><span class="tag">Pinia</span><span class="tag">Vite</span>
         </div>
@@ -656,7 +688,7 @@
       <div class="skill-card">
         <div class="skill-icon">🤖</div>
         <div class="skill-name">AI 应用开发</div>
-        <div class="skill-desc">具备大模型前端接入经验，熟悉 SSE 流式输出、多轮对话、Prompt 设计，对接通义千问等 API。</div>
+        <div class="skill-desc">具备大模型（LLM）前端应用开发经验，熟悉 AI 对话系统实现，包括流式输出（SSE）、多轮对话交互、Prompt 设计；有通义千问等 AI API 接入经验。</div>
         <div class="skill-tags">
           <span class="tag">LLM</span><span class="tag">SSE</span><span class="tag">Streaming</span><span class="tag">通义千问</span>
         </div>
@@ -664,7 +696,7 @@
       <div class="skill-card">
         <div class="skill-icon">📊</div>
         <div class="skill-name">数据可视化</div>
-        <div class="skill-desc">熟练使用 ECharts 进行大屏可视化开发，熟悉 Cesium 地图开发，实现点线面空间可视化交互。</div>
+        <div class="skill-desc">熟练使用 ECharts 进行数据可视化开发，具备大屏项目经验；熟悉 Cesium 地图开发，实现点线面数据展示与空间可视化交互。</div>
         <div class="skill-tags">
           <span class="tag">ECharts</span><span class="tag">Cesium</span><span class="tag">大屏</span><span class="tag">GIS</span>
         </div>
@@ -672,7 +704,7 @@
       <div class="skill-card">
         <div class="skill-icon">📱</div>
         <div class="skill-name">跨端开发</div>
-        <div class="skill-desc">具备 PC 端、小程序端开发经验，熟悉 uniapp 跨端方案，参与多个政企项目开发。</div>
+        <div class="skill-desc">具备 PC 端、小程序端开发经验，熟悉 uniapp 跨端方案；参与多个政企项目开发，具备较强的业务理解与需求拆解能力。</div>
         <div class="skill-tags">
           <span class="tag">uniapp</span><span class="tag">小程序</span><span class="tag">PC端</span>
         </div>
@@ -680,7 +712,7 @@
       <div class="skill-card">
         <div class="skill-icon">🔧</div>
         <div class="skill-name">工程与协作</div>
-        <div class="skill-desc">熟练使用 Git 版本管理，具备组件封装与复用能力，良好的团队协作与技术分享习惯。</div>
+        <div class="skill-desc">熟练使用 Git 进行版本管理，具备良好的团队协作习惯；能够进行组件封装与复用，提升开发效率与项目可维护性。</div>
         <div class="skill-tags">
           <span class="tag">Git</span><span class="tag">组件化</span><span class="tag">代码规范</span>
         </div>
@@ -699,51 +731,63 @@
     <div class="projects-list">
       <div class="project-card">
         <div>
-          <div class="project-meta">2025.11 — 2025.12</div>
-          <div class="project-name">运维智能体系统</div>
-          <div class="project-role">// 前端开发负责人</div>
-          <p class="project-desc">面向集团设备运维管理场景，通过 AI 对话方式实现设备状态分析与预测，辅助运维人员进行故障预判与决策。实现多轮对话上下文管理、Fetch + ReadableStream 流式输出解析，并集成 Web Speech API 语音输入能力。</p>
+          <div class="project-meta">2025.12 — 2026.01</div>
+          <div class="project-name">新疆统计局发票智能核验系统</div>
+          <div class="project-role">// 前端负责人</div>
+          <p class="project-desc">面向企业财务报销场景，基于大模型能力构建发票与报销单的多维度智能审核平台，覆盖 AI 审批、发票溯源、真伪核验及企业名录管理，帮助企业降低人工审核成本，提升财务合规效率。独立负责前端整体重构与架构设计，封装通用组件与 API 层。</p>
           <div class="project-stack">
-            <span class="stack-tag">Vue3</span><span class="stack-tag">Fetch Streaming</span><span class="stack-tag">大模型API</span><span class="stack-tag">Web Speech API</span>
+            <span class="stack-tag">Vue3</span><span class="stack-tag">TypeScript</span><span class="stack-tag">Vite</span><span class="stack-tag">Element Plus</span><span class="stack-tag">ECharts</span>
           </div>
         </div>
         <div class="project-number">01</div>
       </div>
       <div class="project-card">
         <div>
-          <div class="project-meta">2025.10 — 2025.11</div>
-          <div class="project-name">财务智能审核助手</div>
-          <div class="project-role">// 前端负责人</div>
-          <p class="project-desc">面向企业财务报销场景，通过大模型对发票报销单进行多维度智能审核，降低人工审核成本。独立完成前端 AI 审核模块设计，实现 6 维度审核结果结构化展示与异常标记机制。</p>
+          <div class="project-meta">2025.11 — 2025.12</div>
+          <div class="project-name">运维智能体系统</div>
+          <div class="project-role">// 前端开发负责人</div>
+          <p class="project-desc">面向集团级设备运维管理场景，基于 AI 对话交互模式实现设备状态分析、故障预判与维修决策辅助，帮助运维人员从事后维修转向预测性维护。主导设备画像模块前端方案设计，基于 @antv/g 构建多维数据可视化，集成 SSE 流式响应与 Markdown 渲染。</p>
           <div class="project-stack">
-            <span class="stack-tag">Vue</span><span class="stack-tag">通义千问</span><span class="stack-tag">流式输出</span>
+            <span class="stack-tag">Vue3</span><span class="stack-tag">TypeScript</span><span class="stack-tag">Vite</span><span class="stack-tag">@antv/g</span><span class="stack-tag">SSE</span><span class="stack-tag">大模型API</span>
           </div>
         </div>
         <div class="project-number">02</div>
       </div>
       <div class="project-card">
         <div>
-          <div class="project-meta">2025.07 — 2025.09</div>
-          <div class="project-name">大鹏应急指挥平台</div>
-          <div class="project-role">// 前端开发</div>
-          <p class="project-desc">面向政府应急管理场景，实现监控预警与应急指挥调度系统。主导前端架构，从 0 到 1 实现 Cesium 地图模块，基于 ECharts 完成海陆空多维监控数据可视化，支持 21:9 大屏与 PC 端自适应。</p>
+          <div class="project-meta">2025.10 — 2025.11</div>
+          <div class="project-name">财务智能审核助手</div>
+          <div class="project-role">// 前端负责人</div>
+          <p class="project-desc">面向企业财务报销场景，基于大模型对发票报销单进行多维度智能审核，降低人工审核成本。独立完成前端 AI 审核模块设计与重构，实现 6 维度审核结果结构化展示与异常标记机制，封装可复用的 Markdown 渲染组件。</p>
           <div class="project-stack">
-            <span class="stack-tag">Vue</span><span class="stack-tag">Cesium</span><span class="stack-tag">ECharts</span><span class="stack-tag">大屏</span>
+            <span class="stack-tag">Vue3</span><span class="stack-tag">TypeScript</span><span class="stack-tag">通义千问</span><span class="stack-tag">流式输出</span><span class="stack-tag">Pinia</span>
           </div>
         </div>
         <div class="project-number">03</div>
       </div>
       <div class="project-card">
         <div>
+          <div class="project-meta">2025.07 — 2025.09</div>
+          <div class="project-name">大鹏应急指挥平台</div>
+          <div class="project-role">// 前端开发</div>
+          <p class="project-desc">面向政府应急管理场景，实现监控预警与应急指挥调度系统。主导前端架构，从 0 到 1 实现 Cesium 地图模块（点位展示与点线面绘制），基于 ECharts 完成海陆空多维监控数据可视化，封装多级抽屉组件，支持 21:9 大屏与 PC 端自适应。</p>
+          <div class="project-stack">
+            <span class="stack-tag">Vue</span><span class="stack-tag">Cesium</span><span class="stack-tag">ECharts</span><span class="stack-tag">大屏</span>
+          </div>
+        </div>
+        <div class="project-number">04</div>
+      </div>
+      <div class="project-card">
+        <div>
           <div class="project-meta">2025.05 — 2025.07</div>
           <div class="project-name">小智知识库系统</div>
           <div class="project-role">// 前端开发</div>
-          <p class="project-desc">企业内部 AI 知识库与问答系统，支持大模型生成内容展示。开发自定义 Markdown 渲染组件，扩展非标准语法解析，支持图表、流程图渲染，并负责小程序端重构优化。</p>
+          <p class="project-desc">企业内部 AI 知识库与问答系统，支持大模型生成内容展示。开发自定义 Markdown 渲染组件，扩展非标准语法解析，支持图表、流程图渲染；构建内容解析 → 结构化 → 组件渲染流程；负责小程序端重构优化。</p>
           <div class="project-stack">
             <span class="stack-tag">Vue</span><span class="stack-tag">Markdown</span><span class="stack-tag">小程序</span>
           </div>
         </div>
-        <div class="project-number">04</div>
+        <div class="project-number">05</div>
       </div>
     </div>
   </div>
@@ -775,9 +819,8 @@
         <div class="timeline-company">北京林业大学（211）</div>
         <div class="timeline-role">信息管理与信息系统 · 本科</div>
         <ul class="timeline-list">
-          <li>信息系统分析与设计 / 数据库原理 / 数据结构</li>
-          <li>C++ / Java / C 语言 / 操作系统</li>
-          <li>软件设计师证书（2024年获取）</li>
+          <li>信息系统分析与设计 / 操作系统 / 数据库原理与应用 / 数据结构 / C++</li>
+          <li>软件设计师证书（中级 · 2024年获取）</li>
         </ul>
       </div>
     </div>
@@ -793,31 +836,17 @@
     </div>
     <div class="contact-grid">
       <div class="contact-item">
-        <div class="contact-icon">📱</div>
-        <div>
-          <div class="contact-label">PHONE</div>
-          <div class="contact-value">178 3760 5059</div>
-        </div>
-      </div>
-      <div class="contact-item">
         <div class="contact-icon">✉️</div>
         <div>
           <div class="contact-label">EMAIL</div>
-          <div class="contact-value">renmiao@163.com</div>
-        </div>
-      </div>
-      <div class="contact-item">
-        <div class="contact-icon">💼</div>
-        <div>
-          <div class="contact-label">POSITION</div>
-          <div class="contact-value">期望职位：前端工程师</div>
+          <div class="contact-value">renmiao202203@163.com</div>
         </div>
       </div>
       <div class="contact-item">
         <div class="contact-icon">🏅</div>
         <div>
           <div class="contact-label">CERTIFICATE</div>
-          <div class="contact-value">软件设计师证书 · 永久有效</div>
+          <div class="contact-value">软件设计师证书（中级）· 2024年获取</div>
         </div>
       </div>
     </div>
@@ -948,6 +977,7 @@ document.querySelectorAll('.skill-card').forEach((el, i) => { el.dataset.delay =
 document.querySelectorAll('.project-card').forEach((el, i) => { el.dataset.delay = i; observer.observe(el); });
 document.querySelectorAll('.timeline-item').forEach((el, i) => { el.dataset.delay = i; observer.observe(el); });
 document.querySelectorAll('.contact-item').forEach((el, i) => { el.dataset.delay = i; observer.observe(el); });
+document.querySelectorAll('#profile-list').forEach((el, i) => { el.dataset.delay = i; observer.observe(el); });
 </script>
 </body>
 </html>

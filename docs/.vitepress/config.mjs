@@ -6,7 +6,7 @@ export default defineConfig({
   themeConfig: {
     nav: [
       { text: '首页', link: '/' },
-      { text: '简历', link: 'https://incandescent-cannoli-202dde.netlify.app' },
+      { text: '简历', link: '/resume.html' },
       { text: '博客', link: '/blog/' }
     ],
     sidebar: {

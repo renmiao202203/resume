@@ -14,7 +14,7 @@ export default defineConfig({
         {
           text: '前端技术',
           items: [
-            { text: 'SSE 流式输出实现', link: '/blog/sse-streaming' }
+            { text: '前端项目工程基础', link: '/blog/前端项目工程基础知识' }
           ]
         }
       ]

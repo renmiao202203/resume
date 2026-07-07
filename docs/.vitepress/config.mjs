@@ -14,7 +14,8 @@ export default defineConfig({
         {
           text: '前端技术',
           items: [
-            { text: '前端项目工程基础', link: '/blog/前端项目工程基础知识' }
+            { text: '前端项目工程基础', link: '/blog/前端项目工程基础知识' },
+            { text: 'UmiJS + Webpack 工程化', link: '/blog/深入理解UmiJS+Webpack前端工程化' }
           ]
         }
       ]
